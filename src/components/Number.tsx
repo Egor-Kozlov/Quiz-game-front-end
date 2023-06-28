@@ -9,6 +9,7 @@ const Numbers = () => {
         {numbers.map((number, index) => (
           <span key={index}>{number}</span>
         ))}
+        123
       </p>
     </div>
 
