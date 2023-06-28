@@ -9,7 +9,6 @@ const Numbers = () => {
         {numbers.map((number, index) => (
           <span key={index}>{number}</span>
         ))}
-        312
       </p>
     </div>
 
