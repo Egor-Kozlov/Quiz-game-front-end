@@ -8,7 +8,7 @@ const Numbers = () => {
       <p>
         {numbers.map((number, index) => (
           <span key={index}>{number}</span>
-        ))}
+        ))}12312
       </p>
     </div>
 
