@@ -1,6 +1,7 @@
 
 import './Number.scss';
 import { useEffect, useState } from 'react';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Number: React.FC = () => {
   const [numbers, setNumbers] = useState<string>('');
@@ -25,7 +26,12 @@ const Number: React.FC = () => {
 
   return (
     <div className="number-paragraph">
-      {isLoading ? <div>Loading...</div> : numbers}
+      {isLoading ?
+        <ClipLoader
+          loading={isLoading}
+          size={50}
+        />
+        : numbers}
     </div>
   );
 };
