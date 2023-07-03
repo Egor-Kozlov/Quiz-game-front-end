@@ -3,11 +3,16 @@ import './App.scss'
 
 function App() {
   return (
-    <div className="content">
-      <h1>Quiz Game</h1>
-      <Numbers/>
+    <div className="container">
+      <div className="lobby-container">
+        <div className="pin-game">
+          <h1>Game PIN:</h1>
+          <Numbers />
+          <button className="start-button">Chuck</button>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
