@@ -29,9 +29,10 @@ const Number: React.FC = () => {
       {isLoading ?
         <ClipLoader
           loading={isLoading}
-          size={50}
+          size={35}
         />
         : numbers}
+        1
     </div>
   );
 };
