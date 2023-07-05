@@ -1,18 +1,39 @@
-import './Number.scss'
 
+import './Number.scss';
+import { useEffect, useState } from 'react';
+import ClipLoader from "react-spinners/ClipLoader";
 
-const Numbers = () => {
-  const numbers = [1, 2, 3, 4, 5]
+const Number: React.FC = () => {
+  const [numbers, setNumbers] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch('https://quiz-game-dev.cyclic.app/get-key');
+      const data = await response.json();
+      setNumbers(data.value);
+    } catch (error) {
+      console.error('Ошибка при получении данных:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="number-paragraph">
-      <p>
-        {numbers.map((number, index) => (
-          <span key={index}>{number}</span>
-        ))}
-      </p>
+      {isLoading ?
+        <ClipLoader
+          loading={isLoading}
+          size={50}
+        />
+        : numbers}
     </div>
+  );
+};
 
-  )
-}
-
-export default Numbers
+export default Number;
