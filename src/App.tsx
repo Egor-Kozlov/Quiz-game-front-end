@@ -1,14 +1,14 @@
 import Numbers from "./components/Number/Number";
 import './App.scss'
-import Form from './components/Form/Form'
 import React, { useState } from 'react';
+import { FormControl, FormGroup, InputLabel, Input, Button } from "@mui/material";
 
 
 
 const App: React.FC = () => {
   return (
     <div className="container">
-      <Form />
+
       {/* <div className="lobby-container">
         <div className="pin-game">
           <h1>Game PIN:</h1>
@@ -17,6 +17,23 @@ const App: React.FC = () => {
         </div>
         
       </div> */}
+      <div>
+        <FormGroup className='form'>
+          <FormControl>
+            <InputLabel>Full Name</InputLabel>
+            <Input />
+          </FormControl>
+          <FormControl>
+            <InputLabel>Email</InputLabel>
+            <Input />
+          </FormControl>
+          <FormControl>
+            <InputLabel>Password</InputLabel>
+            <Input />
+          </FormControl>
+          <Button variant="contained" color='secondary' className="button">Send</Button>
+        </FormGroup>
+      </div>
     </div>
   )
 }
