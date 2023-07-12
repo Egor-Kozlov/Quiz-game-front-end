@@ -32,7 +32,7 @@ const Number: React.FC = () => {
           size={35}
         />
         : numbers}
-        1
+        
     </div>
   );
 };
